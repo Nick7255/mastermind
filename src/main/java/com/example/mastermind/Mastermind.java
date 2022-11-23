@@ -13,6 +13,11 @@ public class Mastermind extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Mastermind.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Mastermind game");
+
+        stage.setWidth(600);
+        stage.setHeight(400);
+
+
         stage.setScene(scene);
         stage.show();
     }
