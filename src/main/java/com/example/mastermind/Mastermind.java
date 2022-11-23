@@ -6,17 +6,20 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Mastermind extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Mastermind.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Mastermind.class.getResource("front.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Mastermind game");
 
-        stage.setWidth(600);
+        stage.setWidth(700);
         stage.setHeight(400);
-
+        //scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("app.css")).toExternalForm());
+        //String css = this.getClass().getResource("styleWelcomePage.css").toExternalForm();
+        //scene.getStylesheets().add(css);
 
         stage.setScene(scene);
         stage.show();
