@@ -17,5 +17,10 @@
             <Font name="System Bold Italic" size="22.0" />
          </font>
       </Label>
+      <Label layoutX="177.0" layoutY="14.0" text="MasterMind">
+         <font>
+            <Font name="System Bold Italic" size="44.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
