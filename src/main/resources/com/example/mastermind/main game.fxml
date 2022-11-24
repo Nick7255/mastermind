@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="677.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mastermind.MainGame">
+<AnchorPane prefHeight="677.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mastermind.MainGame">
    <children>
       <Label layoutX="27.0" layoutY="30.0" text="SCORE">
          <font>
@@ -23,7 +23,6 @@
             <Font name="System Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Circle fx:id="circle11" fill="#a3a6a8" layoutX="120.0" layoutY="83.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
       <Rectangle fx:id="blue" arcHeight="5.0" arcWidth="5.0" fill="#000dff" height="43.0" layoutX="27.0" layoutY="97.0" onMouseClicked="#colorGetter" stroke="BLACK" strokeType="INSIDE" width="44.0" />
       <Rectangle fx:id="red" arcHeight="5.0" arcWidth="5.0" fill="RED" height="43.0" layoutX="27.0" layoutY="152.0" onMouseClicked="#colorGetter" stroke="BLACK" strokeType="INSIDE" width="44.0" />
       <Rectangle fx:id="green" arcHeight="5.0" arcWidth="5.0" fill="#00ff04" height="43.0" layoutX="27.0" layoutY="216.0" onMouseClicked="#colorGetter" stroke="BLACK" strokeType="INSIDE" width="44.0" />
@@ -32,5 +31,45 @@
       <Rectangle fx:id="purple" arcHeight="5.0" arcWidth="5.0" fill="#ff00ae" height="43.0" layoutX="27.0" layoutY="407.0" onMouseClicked="#colorGetter" stroke="BLACK" strokeType="INSIDE" width="44.0" />
       <Rectangle fx:id="black" arcHeight="5.0" arcWidth="5.0" height="43.0" layoutX="27.0" layoutY="475.0" onMouseClicked="#colorGetter" stroke="BLACK" strokeType="INSIDE" width="44.0" />
       <Rectangle fx:id="white" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="43.0" layoutX="27.0" layoutY="537.0" onMouseClicked="#colorGetter" stroke="BLACK" strokeType="INSIDE" width="44.0" />
+      <Circle fx:id="circle12" fill="#a3a6a8" layoutX="197.0" layoutY="140.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle13" fill="#a3a6a8" layoutX="254.0" layoutY="140.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle14" fill="#a3a6a8" layoutX="297.0" layoutY="140.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle21" fill="#a3a6a8" layoutX="153.0" layoutY="174.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle22" fill="#a3a6a8" layoutX="197.0" layoutY="174.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle23" fill="#a3a6a8" layoutX="254.0" layoutY="174.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle24" fill="#a3a6a8" layoutX="297.0" layoutY="174.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle31" fill="#a3a6a8" layoutX="153.0" layoutY="209.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle32" fill="#a3a6a8" layoutX="197.0" layoutY="209.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle33" fill="#a3a6a8" layoutX="254.0" layoutY="209.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle34" fill="#a3a6a8" layoutX="297.0" layoutY="209.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle41" fill="#a3a6a8" layoutX="153.0" layoutY="245.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle42" fill="#a3a6a8" layoutX="197.0" layoutY="245.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle43" fill="#a3a6a8" layoutX="254.0" layoutY="245.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle44" fill="#a3a6a8" layoutX="297.0" layoutY="245.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle51" fill="#a3a6a8" layoutX="153.0" layoutY="284.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle52" fill="#a3a6a8" layoutX="197.0" layoutY="284.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle53" fill="#a3a6a8" layoutX="254.0" layoutY="284.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle54" fill="#a3a6a8" layoutX="297.0" layoutY="284.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle61" fill="#a3a6a8" layoutX="153.0" layoutY="319.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle62" fill="#a3a6a8" layoutX="197.0" layoutY="319.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle63" fill="#a3a6a8" layoutX="254.0" layoutY="319.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle64" fill="#a3a6a8" layoutX="297.0" layoutY="319.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle71" fill="#a3a6a8" layoutX="153.0" layoutY="353.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle72" fill="#a3a6a8" layoutX="197.0" layoutY="353.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle73" fill="#a3a6a8" layoutX="254.0" layoutY="353.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle74" fill="#a3a6a8" layoutX="297.0" layoutY="353.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle82" fill="#a3a6a8" layoutX="197.0" layoutY="393.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle83" fill="#a3a6a8" layoutX="254.0" layoutY="393.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle84" fill="#a3a6a8" layoutX="297.0" layoutY="393.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle11" fill="#a3a6a8" layoutX="153.0" layoutY="140.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle91" fill="#a3a6a8" layoutX="153.0" layoutY="429.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle92" fill="#a3a6a8" layoutX="197.0" layoutY="429.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle93" fill="#a3a6a8" layoutX="254.0" layoutY="429.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle94" fill="#a3a6a8" layoutX="297.0" layoutY="429.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle104" fill="#a3a6a8" layoutX="297.0" layoutY="464.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle103" fill="#a3a6a8" layoutX="254.0" layoutY="464.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle102" fill="#a3a6a8" layoutX="197.0" layoutY="464.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle101" fill="#a3a6a8" layoutX="153.0" layoutY="464.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle81" fill="#a3a6a8" layoutX="153.0" layoutY="393.0" onMouseClicked="#colorPicker" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>
