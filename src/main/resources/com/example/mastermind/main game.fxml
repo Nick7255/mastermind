@@ -14,7 +14,7 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="scoreText" layoutX="49.0" layoutY="55.0" text="0">
+      <Label fx:id="scoreText" layoutX="49.0" layoutY="58.0" text="0">
          <font>
             <Font name="System Bold Italic" size="22.0" />
          </font>
@@ -122,5 +122,15 @@
       <Circle fx:id="circle14111321" fill="#a3a6a8" layoutX="355.0" layoutY="511.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="circle14111322" fill="#a3a6a8" layoutX="369.0" layoutY="525.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="circle14111323" fill="#a3a6a8" layoutX="369.0" layoutY="511.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="426.0" layoutY="30.0" text="ROUND">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="roundText1" layoutX="453.0" layoutY="58.0" text="0">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

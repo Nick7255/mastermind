@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -49,5 +50,20 @@ public class MainGame {
         System.out.print(idx);
         circle11.setFill(color);
     }
+
+    @FXML
+    Label scoreText = new Label();
+    Label roundText = new Label();
+    int sum=0, count=0;
+
+    String st1,st2;
+                       //sum   count
+    private void score(int a,int b){
+        st1 = Integer.toString(a);
+        st2 = Integer.toString(b);
+        scoreText.setText(st1);
+        roundText.setText(st2);
+    }
+
 
 }
