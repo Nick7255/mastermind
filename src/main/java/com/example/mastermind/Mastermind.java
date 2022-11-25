@@ -17,8 +17,6 @@ public class Mastermind extends Application {
 
         stage.setWidth(700);
         stage.setHeight(400);
-        //String css = this.getClass().getResource("styleWelcomePage.css").toExternalForm();
-        //scene.getStylesheets().add(css);
 
         stage.setScene(scene);
         stage.show();

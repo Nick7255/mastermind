@@ -28,6 +28,9 @@ public class SwitchToScene2 {
         root = loader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene((Parent) root);
+
+        stage.setHeight(700);
+
         stage.setScene(scene);
         stage.show();
 
