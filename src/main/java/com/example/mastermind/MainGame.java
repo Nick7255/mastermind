@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseButton;
@@ -49,38 +50,16 @@ public class MainGame {
     }
 
     public void colorPicker(MouseEvent event) {
-        String eventlogger = event.getPickResult().getIntersectedNode().getId();
-        if (Objects.equals(eventlogger, red.getId())) {
-
-        }
-        String selectedcircleId = eventlogger.replaceAll("[\\D]", "");
-        int idx = Integer.parseInt(selectedcircleId);
-        System.out.print(idx);
-        circle11.setFill(color);
-        Circle[] circles = {circle1, circle2, circle3, circle4, circle5, circle6, circle7, circle8,
-                circle9, circle10, circle11, circle12, circle13, circle14, circle15, circle16,
-                circle17, circle18, circle19, circle20, circle21, circle22, circle23, circle24, circle25,
-                circle26, circle27, circle28, circle29, circle30, circle31, circle32, circle33,
-                circle34, circle35, circle36, circle37, circle38, circle39, circle40};
-        for (int i = 0; i <= circles.length - 1; i = i + 1) {
-            if (circles[idx] == circles[i]) {
-                circles[idx].setFill(color);
-            }
+        Object get_circle = event.getSource();
+        Circle circle = (Circle) event.getSource();
+        if (circle.equals(get_circle)){
+            circle.setFill(color);
         }
 
 
         Label scoreText = new Label();
         Label roundText = new Label();
         int sum = 0, count = 0;
-
-        String st1, st2;
-        //sum   count
-        private void score ( int a, int b){
-            st1 = Integer.toString(a);
-            st2 = Integer.toString(b);
-            scoreText.setText(st1);
-            roundText.setText(st2);
-        }
 
     }
 }
