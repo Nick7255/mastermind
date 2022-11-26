@@ -22,8 +22,6 @@ public class SwitchToScene2 {
     private Button Startgame;
 
     public void BeginGame(ActionEvent event) throws IOException {
-        System.out.println("test1");
-        System.out.println("Partoooooo");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main game.fxml"));
         root = loader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
