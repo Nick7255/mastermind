@@ -9,6 +9,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 
 import java.util.*;
 
@@ -28,19 +29,16 @@ public class MainGame {
             flag21,flag22,flag23,flag24,flag25,flag26,flag27,flag28,flag29,flag30,
             flag31,flag32,flag33,flag34,flag35,flag36,flag37,flag38,flag39,flag40;
 
-
     @FXML
     public Rectangle white, blue, black, yellow, green, orange, purple, red, screen;
-    private Button submitButton, setGame;
-
+    public Button submitButton, setGameButton;
     public Paint color;
-
     public Object get_circle;
     public Circle circle;
-
+    public Text secretcodetext;
     public ArrayList<Object> circles = new ArrayList<Object>();
 
-//System.out.println(randNum);
+
 
     public void colorGetter(MouseEvent event) {
 
@@ -65,39 +63,47 @@ public class MainGame {
             circle.setFill(color);
             circle.setDisable(true);
             circles.add(circle);
-
         }
         if (circles.size() == 4) {
             System.out.println("4 circles complete");
         }
-
-
         Label scoreText = new Label();
         Label roundText = new Label();
         int sum = 0, count = 0;
 
     }
-
-    public int randNum() {
-        Random rand = new Random();
-        return rand.nextInt(9);
+    public static ArrayList getRandomNonRepeatingIntegers(int size, int min, int max) {
+       ArrayList numbers = new ArrayList();
+        Random random = new Random();
+        while (numbers.size() < size) {
+            int randomNumber = random.nextInt((max - min) + 1) + min;
+            if (!numbers.contains(randomNumber)) {
+                numbers.add(randomNumber);
+            }
+        }
+        return numbers;
     }
-
-
+            //doulevei tis perissoteres fores alla merikes vgazei out of bounds exception
     public void setGame(ActionEvent event){
          ArrayList<Paint> colorsarray = new ArrayList<Paint>();
-
+        ArrayList list = getRandomNonRepeatingIntegers(4, 0, 8);
         for (Rectangle rectangle : Arrays.asList(white, blue, black, yellow, green, orange, purple, red)) {
             colorsarray.add(rectangle.getFill());
         }
-
-        for (Circle circleHidden : Arrays.asList(hiddenCircle1, hiddenCircle2, hiddenCircle3, hiddenCircle4)) {
-            String i = String.valueOf(randNum());
-            System.out.println(i);
-           circleHidden.setFill(colorsarray.get(randNum()));
-           circleHidden.setDisable(true);
-           circleHidden.setVisible(false);
-        }
+        int i = 0;
+            for (Circle circleHidden : Arrays.asList(hiddenCircle1, hiddenCircle2, hiddenCircle3, hiddenCircle4)) {
+                int num = (int) list.get(i);
+                System.out.println(num);
+               Paint current = colorsarray.get(num);
+                System.out.println(current);
+                circleHidden.setFill(current);
+                i = i + 1;
+                num = 0;
+                current = null;
+                screen.setOpacity(1);
+                secretcodetext.setOpacity(1);
+            }
+            setGameButton.setOpacity(0);
     }
 
     public Circle[][] hint= new Circle[][]{
@@ -128,19 +134,22 @@ public class MainGame {
 
     //Gia kathe swsto xrwma deixnei white flag & Gia kathe xrwma poy exei mantepsei swsta thn thesi deixnei black flag
 
-    public void Submit (ActionEvent event) {
+    // edw tsekarw an to array twn hidden circle einai global
+    // gia to check twn hidden circle kane for loop opws exw kanei sthn function setGame. logika kati tetoio thelei
 
-        for (int idx=0;idx>=circles.size();idx++){
-            for (int idy=0; idy>=circles.size();idy++){
-                if(circles.get(idx) ==circleHidden.get(idy) && idx==idy){
-                    id=idy;
-                    flagsSetUp(1,id);
-                } else if (circles.get(idx)==circleHidden.get(idy) && idx!=idy) {
-                    id=idy;
-                    flagsSetUp(0,id);
-                }
-            }
-        }
+    public void Submit (ActionEvent event) {
+        System.out.println(hiddenCircle1.getFill());
+       //for (int idx=0;idx<=circles.size();idx++){
+         //  for (int idy=0; idy>=circles.size();idy++){
+           //   if(circles.get(idx) == circleHidden.get(idy) && idx==idy){
+             //    id=idy;
+              //   flagsSetUp(1,id);
+              //} else if (circles.get(idx)==circleHidden.get(idy) && idx!=idy) {
+             //      id=idy;
+                   //flagsSetUp(0,id);
+              //}
+           //}
+       //}
 
         circles.clear();
         System.out.println(circles);
