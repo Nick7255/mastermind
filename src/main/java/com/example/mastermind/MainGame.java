@@ -134,10 +134,10 @@ public class MainGame {
             for (int idy=0; idy>=circles.size();idy++){
                 if(circles.get(idx) ==circleHidden.get(idy) && idx==idy){
                     id=idy;
-                    hint[1][id];
+                    flagsSetUp(1,id);
                 } else if (circles.get(idx)==circleHidden.get(idy) && idx!=idy) {
                     id=idy;
-                    hint[0][id];
+                    flagsSetUp(0,id);
                 }
             }
         }
