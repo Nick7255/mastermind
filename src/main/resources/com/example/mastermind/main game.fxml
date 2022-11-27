@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="677.0" prefWidth="526.0" style="-fx-background-color: brown;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mastermind.MainGame">
+<AnchorPane prefHeight="677.0" prefWidth="526.0" style="-fx-background-color: brown;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mastermind.MainGame">
    <children>
       <Label layoutX="27.0" layoutY="30.0" text="SCORE">
          <font>
@@ -91,38 +91,38 @@
       <Circle fx:id="flag5" fill="#a3a6a8" layoutX="355.0" layoutY="167.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="flag6" fill="#a3a6a8" layoutX="369.0" layoutY="167.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="flag8" fill="#a3a6a8" layoutX="369.0" layoutY="181.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag10" fill="#a3a6a8" layoutX="355.0" layoutY="223.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag11" fill="#a3a6a8" layoutX="355.0" layoutY="223.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="flag9" fill="#a3a6a8" layoutX="355.0" layoutY="209.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag9" fill="#a3a6a8" layoutX="369.0" layoutY="209.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag11" fill="#a3a6a8" layoutX="369.0" layoutY="223.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag14" fill="#a3a6a8" layoutX="355.0" layoutY="266.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag12" fill="#a3a6a8" layoutX="355.0" layoutY="252.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag15" fill="#a3a6a8" layoutX="369.0" layoutY="266.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag13" fill="#a3a6a8" layoutX="369.0" layoutY="252.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag16" fill="#a3a6a8" layoutX="355.0" layoutY="291.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag17" fill="#a3a6a8" layoutX="369.0" layoutY="291.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="circle1411132" fill="#a3a6a8" layoutX="355.0" layoutY="305.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="circle1411133" fill="#a3a6a8" layoutX="369.0" layoutY="305.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag20" fill="#a3a6a8" layoutX="355.0" layoutY="346.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag21" fill="#a3a6a8" layoutX="369.0" layoutY="346.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag18" fill="#a3a6a8" layoutX="355.0" layoutY="332.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag19" fill="#a3a6a8" layoutX="369.0" layoutY="332.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag23" fill="#a3a6a8" layoutX="355.0" layoutY="396.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag22" fill="#a3a6a8" layoutX="355.0" layoutY="382.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag23" fill="#a3a6a8" layoutX="369.0" layoutY="382.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag24" fill="#a3a6a8" layoutX="369.0" layoutY="396.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag27" fill="#a3a6a8" layoutX="355.0" layoutY="436.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag28" fill="#a3a6a8" layoutX="369.0" layoutY="436.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag25" fill="#a3a6a8" layoutX="355.0" layoutY="422.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag26" fill="#a3a6a8" layoutX="369.0" layoutY="422.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag31" fill="#a3a6a8" layoutX="355.0" layoutY="482.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag29" fill="#a3a6a8" layoutX="355.0" layoutY="468.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag32" fill="#a3a6a8" layoutX="369.0" layoutY="482.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag30" fill="#a3a6a8" layoutX="369.0" layoutY="468.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag35" fill="#a3a6a8" layoutX="355.0" layoutY="525.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag33" fill="#a3a6a8" layoutX="355.0" layoutY="511.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag36" fill="#a3a6a8" layoutX="369.0" layoutY="525.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="flag34" fill="#a3a6a8" layoutX="369.0" layoutY="511.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag10" fill="#a3a6a8" layoutX="369.0" layoutY="209.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag12" fill="#a3a6a8" layoutX="369.0" layoutY="223.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag15" fill="#a3a6a8" layoutX="355.0" layoutY="266.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag13" fill="#a3a6a8" layoutX="355.0" layoutY="252.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag16" fill="#a3a6a8" layoutX="369.0" layoutY="266.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag14" fill="#a3a6a8" layoutX="369.0" layoutY="252.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag17" fill="#a3a6a8" layoutX="355.0" layoutY="291.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag18" fill="#a3a6a8" layoutX="369.0" layoutY="291.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag19" fill="#a3a6a8" layoutX="355.0" layoutY="305.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag20" fill="#a3a6a8" layoutX="369.0" layoutY="305.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag23" fill="#a3a6a8" layoutX="355.0" layoutY="346.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag24" fill="#a3a6a8" layoutX="369.0" layoutY="346.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag21" fill="#a3a6a8" layoutX="355.0" layoutY="332.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag22" fill="#a3a6a8" layoutX="369.0" layoutY="332.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag27" fill="#a3a6a8" layoutX="355.0" layoutY="396.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag25" fill="#a3a6a8" layoutX="355.0" layoutY="382.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag26" fill="#a3a6a8" layoutX="369.0" layoutY="382.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag28" fill="#a3a6a8" layoutX="369.0" layoutY="396.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag31" fill="#a3a6a8" layoutX="355.0" layoutY="436.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag32" fill="#a3a6a8" layoutX="369.0" layoutY="436.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag29" fill="#a3a6a8" layoutX="355.0" layoutY="422.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag30" fill="#a3a6a8" layoutX="369.0" layoutY="422.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag35" fill="#a3a6a8" layoutX="355.0" layoutY="482.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag33" fill="#a3a6a8" layoutX="355.0" layoutY="468.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag36" fill="#a3a6a8" layoutX="369.0" layoutY="482.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag34" fill="#a3a6a8" layoutX="369.0" layoutY="468.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag39" fill="#a3a6a8" layoutX="355.0" layoutY="525.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag37" fill="#a3a6a8" layoutX="355.0" layoutY="511.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag40" fill="#a3a6a8" layoutX="369.0" layoutY="525.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="flag38" fill="#a3a6a8" layoutX="369.0" layoutY="511.0" onMouseClicked="#colorPicker" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Label layoutX="426.0" layoutY="30.0" text="ROUND">
          <font>
             <Font name="System Bold Italic" size="18.0" />
