@@ -5,35 +5,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="373.0" prefWidth="676.0" style="-fx-background-color: brown;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mastermind.SwitchToScene2">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="373.0" prefWidth="676.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mastermind.SwitchToScene2">
    <children>
-      <Button fx:id="Startgame" layoutX="301.0" layoutY="250.0" mnemonicParsing="false" onAction="#BeginGame" text="Start game" />
-      <Label layoutX="112.0" layoutY="74.0" prefHeight="53.0" prefWidth="468.0" text="Welcome to the mastermind board game">
+      <Button fx:id="Startgame" layoutX="292.0" layoutY="258.0" mnemonicParsing="false" onAction="#BeginGame" text="Start game" />
+      <Label layoutX="126.0" layoutY="53.0" prefHeight="53.0" prefWidth="468.0" text="Welcome to the mastermind board game">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="316.0" layoutY="114.0" text="Credits:">
+      <Label layoutX="301.0" layoutY="116.0" text="Credits:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="283.0" layoutY="141.0" text="Nikos Krassas 5449">
+      <Label layoutX="272.0" layoutY="145.0" text="Nikos Krassas 5449">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="283.0" layoutY="161.0" text="Kostas Markopoulos 5282">
+      <Label layoutX="255.0" layoutY="178.0" text="Kostas Markopoulos 5282">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="283.0" layoutY="187.0" text="Odysseas Karagiannis ">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="283.0" layoutY="215.0" text="Stamatis Sidiras">
+      <Label layoutX="250.0" layoutY="214.0" text="Odysseas Karagiannis 5514">
          <font>
             <Font size="14.0" />
          </font>

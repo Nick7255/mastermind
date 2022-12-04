@@ -24,10 +24,12 @@ public class MainGame {
             circle34, circle35, circle36, circle37, circle38, circle39, circle40, hiddenCircle1, hiddenCircle2, hiddenCircle3, hiddenCircle4;
 
     @FXML
-    public Circle flag1,flag2,flag3,flag4,flag5,flag6,flag7,flag8,flag9,flag10,
-            flag11,flag12,flag13,flag14,flag15,flag16,flag17,flag18,flag19,flag20,
-            flag21,flag22,flag23,flag24,flag25,flag26,flag27,flag28,flag29,flag30,
+   public Circle flag1,flag2,flag3,flag4,flag5,flag6,flag7,flag8,flag9,flag10,
+           flag11,flag12,flag13,flag14,flag15,flag16,flag17,flag18,flag19,flag20,
+         flag21,flag22,flag23,flag24,flag25,flag26,flag27,flag28,flag29,flag30,
             flag31,flag32,flag33,flag34,flag35,flag36,flag37,flag38,flag39,flag40;
+
+
 
     @FXML
     public Rectangle white, blue, black, yellow, green, orange, purple, red, screen;
@@ -36,8 +38,10 @@ public class MainGame {
     public Object get_circle;
     public Circle circle;
     public Text secretcodetext;
-    public ArrayList<Object> circles = new ArrayList<Object>();
+    public ArrayList<Paint> circles = new ArrayList<Paint>();
+    public ArrayList<Paint> hiddenCircles=new ArrayList<Paint>();
 
+    public Circle[][] flags;
 
 
     public void colorGetter(MouseEvent event) {
@@ -62,7 +66,7 @@ public class MainGame {
         if (circle.equals(get_circle) && circles.size() < 4) {
             circle.setFill(color);
             circle.setDisable(true);
-            circles.add(circle);
+            circles.add(circle.getFill());
         }
         if (circles.size() == 4) {
             System.out.println("4 circles complete");
@@ -84,51 +88,57 @@ public class MainGame {
         return numbers;
     }
             //doulevei tis perissoteres fores alla merikes vgazei out of bounds exception
-    public void setGame(ActionEvent event){
-         ArrayList<Paint> colorsarray = new ArrayList<Paint>();
-        ArrayList list = getRandomNonRepeatingIntegers(4, 0, 8);
+    public void setGame(ActionEvent event) {
+
+        ArrayList<Paint> colorsarray = new ArrayList<Paint>();
+        ArrayList list = getRandomNonRepeatingIntegers(4, 0, 7);
         for (Rectangle rectangle : Arrays.asList(white, blue, black, yellow, green, orange, purple, red)) {
             colorsarray.add(rectangle.getFill());
         }
-        int i = 0;
-            for (Circle circleHidden : Arrays.asList(hiddenCircle1, hiddenCircle2, hiddenCircle3, hiddenCircle4)) {
-                int num = (int) list.get(i);
-                System.out.println(num);
-               Paint current = colorsarray.get(num);
-                System.out.println(current);
-                circleHidden.setFill(current);
-                i = i + 1;
-                num = 0;
-                current = null;
-                screen.setOpacity(1);
-                secretcodetext.setOpacity(1);
-            }
-            setGameButton.setOpacity(0);
+        int y = 0;
+        Paint current = null;
+        hiddenCircles.clear();
+
+        flags= new Circle[][]{
+                {flag1,flag2,flag3,flag4},
+                {flag5,flag6,flag7,flag8},
+                {flag9,flag10, flag11,flag12},
+                {flag13,flag14,flag15,flag16},
+                {flag17,flag18,flag19,flag20},
+                {flag21,flag22,flag23,flag24},
+                {flag25,flag26,flag27,flag28},
+                {flag29,flag30, flag31,flag32},
+                {flag33,flag34,flag35,flag36},
+                {flag37,flag38,flag39,flag40}};
+
+
+        for (Circle circleHidden : Arrays.asList(hiddenCircle1, hiddenCircle2, hiddenCircle3, hiddenCircle4)) {
+            hiddenCircles.add(circleHidden.getFill());
+            int num = (int) list.get(y);
+            //System.out.println(num);
+            current = colorsarray.get(num);
+            //System.out.println(current);
+            circleHidden.setFill(current);
+            y = y+1;
+            num = 0;
+            screen.setOpacity(1);
+            secretcodetext.setOpacity(1);
+        }
+        setGameButton.setOpacity(0);
     }
 
-    public Circle[][] hint= new Circle[][]{
-            {flag1,flag2,flag3,flag4},
-            {flag5,flag6,flag7,flag8},
-            {flag9,flag10,flag11,flag12},
-            {flag13,flag14,flag15,flag16},
-            {flag17,flag18,flag19,flag20},
-            {flag21,flag22,flag23,flag24},
-            {flag25,flag26,flag27,flag28},
-            {flag29,flag30,flag31,flag32},
-            {flag33,flag34,flag35,flag36},
-            {flag37,flag38,flag39,flag40},
-    };
 
-    int round= 0;
-    int id=0;
+    public int round= 0;
+    public int id=0;
 
     private void flagsSetUp(int colorExist,int idx){
+        //System.out.println(flags);
         if (colorExist == 0){
-            hint[round][idx].setFill(Color.WHITE);
+            flags[round][idx].setFill(Color.WHITE);
         }
-        if (colorExist == 1){
-            hint[round][idx].setFill(Color.BLACK);
-        }
+       if (colorExist == 1){
+           flags[round][idx].setFill(Color.RED);
+       }
     }
 
 
@@ -138,7 +148,19 @@ public class MainGame {
     // gia to check twn hidden circle kane for loop opws exw kanei sthn function setGame. logika kati tetoio thelei
 
     public void Submit (ActionEvent event) {
-        System.out.println(hiddenCircle1.getFill());
+        for (int i=0; i<hiddenCircles.size(); i++){
+            for (int j=0; j<circles.size(); j++){
+                if (circles.get(i).equals(hiddenCircles.get(j))&& i==j){
+                    //System.out.println("1");
+                    //flag1.setFill(Color.RED);
+                    flagsSetUp(1,i);
+                } else if (!(circles.get(i).equals(hiddenCircles.get(j)))) {
+                    //System.out.println("0");
+                    //flag1.setFill(Color.WHITE);
+                    flagsSetUp(0,i);
+                }
+            }
+        }
        //for (int idx=0;idx<=circles.size();idx++){
          //  for (int idy=0; idy>=circles.size();idy++){
            //   if(circles.get(idx) == circleHidden.get(idy) && idx==idy){
@@ -153,5 +175,6 @@ public class MainGame {
 
         circles.clear();
         System.out.println(circles);
+        round += 1;
     }
 }
