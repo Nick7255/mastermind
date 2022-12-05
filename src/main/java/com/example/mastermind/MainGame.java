@@ -111,7 +111,6 @@ public class MainGame {
                 {flag33,flag34,flag35,flag36},
                 {flag37,flag38,flag39,flag40}};
 
-
         for (Circle circleHidden : Arrays.asList(hiddenCircle1, hiddenCircle2, hiddenCircle3, hiddenCircle4)) {
             hiddenCircles.add(circleHidden.getFill());
             int num = (int) list.get(y);
@@ -147,6 +146,10 @@ public class MainGame {
     // edw tsekarw an to array twn hidden circle einai global
     // gia to check twn hidden circle kane for loop opws exw kanei sthn function setGame. logika kati tetoio thelei
 
+    //to provlima einai oti ta .get den tha einai pote isa giati o kathe kuklos exei to diko tou id
+    //opote prepei na elegxoume me thn get fill ara prepei na tis metatrepsoume se object h arrays. to doulevw akoma
+    //alla ws exei einai se stable katastash
+
     public void Submit (ActionEvent event) {
         for (int i=0; i<hiddenCircles.size(); i++){
             for (int j=0; j<circles.size(); j++){
@@ -154,27 +157,14 @@ public class MainGame {
                     //System.out.println("1");
                     //flag1.setFill(Color.RED);
                     flagsSetUp(1,i);
-                } else if (!(circles.get(i).equals(hiddenCircles.get(j)))) {
+                } else if (circles.get(i).equals(hiddenCircles.get(j))) {
                     //System.out.println("0");
                     //flag1.setFill(Color.WHITE);
                     flagsSetUp(0,i);
                 }
             }
         }
-       //for (int idx=0;idx<=circles.size();idx++){
-         //  for (int idy=0; idy>=circles.size();idy++){
-           //   if(circles.get(idx) == circleHidden.get(idy) && idx==idy){
-             //    id=idy;
-              //   flagsSetUp(1,id);
-              //} else if (circles.get(idx)==circleHidden.get(idy) && idx!=idy) {
-             //      id=idy;
-                   //flagsSetUp(0,id);
-              //}
-           //}
-       //}
-
         circles.clear();
-        System.out.println(circles);
         round += 1;
     }
 }
