@@ -78,7 +78,7 @@ public class MainGame {
 
     }
     public static ArrayList getRandomNonRepeatingIntegers(int size, int min, int max) {
-       ArrayList numbers = new ArrayList();
+       ArrayList<Integer> numbers = new ArrayList<Integer>();
         Random random = new Random();
         while (numbers.size() < size) {
             int randomNumber = random.nextInt((max - min) + 1) + min;
@@ -88,7 +88,6 @@ public class MainGame {
         }
         return numbers;
     }
-            //doulevei tis perissoteres fores alla merikes vgazei out of bounds exception
     public void setGame(ActionEvent event) {
 
         ArrayList<Paint> colorsarray = new ArrayList<Paint>();
@@ -116,9 +115,7 @@ public class MainGame {
 
         for (Circle circleHidden : Arrays.asList(hiddenCircle1, hiddenCircle2, hiddenCircle3, hiddenCircle4)) {
             int num = (int) list.get(y);
-            //System.out.println(num);
             current = colorsarray.get(num);
-            //System.out.println(current);
             circleHidden.setFill(current);
             hiddenCircles.add((Color) circleHidden.getFill());
             y = y+1;
@@ -134,7 +131,6 @@ public class MainGame {
     public int id=0;
 
     private void flagsSetUp(int colorExist,int idx){
-        //System.out.println(flags);
         if (colorExist == 0){
             flags[round][idx].setFill(Color.WHITE);
         }
@@ -146,16 +142,9 @@ public class MainGame {
     public void Submit (ActionEvent event) {
         for (int i=0; i<circles.size(); i++){
             for (int j=0; j<hiddenCircles.size(); j++){
-                System.out.println(circles.get(i)+" "+hiddenCircles.get(j));
                 if (circles.get(i)==hiddenCircles.get(j) && i==j){
-                    System.out.println("1");
-                    //flag1.setFill(Color.RED);
                     flagsSetUp(1,j);
-                } else if (circles.get(i)==hiddenCircles.get(j)) {
-                    System.out.println("0");
-                    //flag1.setFill(Color.WHITE);
-                    flagsSetUp(0,j);
-                }else System.out.println("if statements not working");
+                } else if (circles.get(i)==hiddenCircles.get(j)) flagsSetUp(0, j);
             }
         }
         circles.clear();
