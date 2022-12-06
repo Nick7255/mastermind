@@ -38,8 +38,8 @@ public class MainGame {
     public Object get_circle;
     public Circle circle;
     public Text secretcodetext;
-    public ArrayList<Paint> circles = new ArrayList<Paint>();
-    public ArrayList<Paint> hiddenCircles=new ArrayList<Paint>();
+    public ArrayList<Color> circles = new ArrayList<Color>();
+    public ArrayList<Color> hiddenCircles=new ArrayList<Color>();
 
     public Circle[][] flags;
 
@@ -66,10 +66,11 @@ public class MainGame {
         if (circle.equals(get_circle) && circles.size() < 4) {
             circle.setFill(color);
             circle.setDisable(true);
-            circles.add(circle.getFill());
+            circles.add((Color) circle.getFill());
         }
         if (circles.size() == 4) {
             System.out.println("4 circles complete");
+            System.out.println(circles);
         }
         Label scoreText = new Label();
         Label roundText = new Label();
@@ -93,7 +94,9 @@ public class MainGame {
         ArrayList<Paint> colorsarray = new ArrayList<Paint>();
         ArrayList list = getRandomNonRepeatingIntegers(4, 0, 7);
         for (Rectangle rectangle : Arrays.asList(white, blue, black, yellow, green, orange, purple, red)) {
+            System.out.println(rectangle.getFill());
             colorsarray.add(rectangle.getFill());
+            System.out.println(colorsarray);
         }
         int y = 0;
         Paint current = null;
@@ -112,12 +115,12 @@ public class MainGame {
                 {flag37,flag38,flag39,flag40}};
 
         for (Circle circleHidden : Arrays.asList(hiddenCircle1, hiddenCircle2, hiddenCircle3, hiddenCircle4)) {
-            hiddenCircles.add(circleHidden.getFill());
             int num = (int) list.get(y);
             //System.out.println(num);
             current = colorsarray.get(num);
             //System.out.println(current);
             circleHidden.setFill(current);
+            hiddenCircles.add((Color) circleHidden.getFill());
             y = y+1;
             num = 0;
             screen.setOpacity(1);
@@ -140,28 +143,19 @@ public class MainGame {
        }
     }
 
-
-    //Gia kathe swsto xrwma deixnei white flag & Gia kathe xrwma poy exei mantepsei swsta thn thesi deixnei black flag
-
-    // edw tsekarw an to array twn hidden circle einai global
-    // gia to check twn hidden circle kane for loop opws exw kanei sthn function setGame. logika kati tetoio thelei
-
-    //to provlima einai oti ta .get den tha einai pote isa giati o kathe kuklos exei to diko tou id
-    //opote prepei na elegxoume me thn get fill ara prepei na tis metatrepsoume se object h arrays. to doulevw akoma
-    //alla ws exei einai se stable katastash
-
     public void Submit (ActionEvent event) {
-        for (int i=0; i<hiddenCircles.size(); i++){
-            for (int j=0; j<circles.size(); j++){
-                if (circles.get(i).equals(hiddenCircles.get(j))&& i==j){
-                    //System.out.println("1");
+        for (int i=0; i<circles.size(); i++){
+            for (int j=0; j<hiddenCircles.size(); j++){
+                System.out.println(circles.get(i)+" "+hiddenCircles.get(j));
+                if (circles.get(i)==hiddenCircles.get(j) && i==j){
+                    System.out.println("1");
                     //flag1.setFill(Color.RED);
-                    flagsSetUp(1,i);
-                } else if (circles.get(i).equals(hiddenCircles.get(j))) {
-                    //System.out.println("0");
+                    flagsSetUp(1,j);
+                } else if (circles.get(i)==hiddenCircles.get(j)) {
+                    System.out.println("0");
                     //flag1.setFill(Color.WHITE);
-                    flagsSetUp(0,i);
-                }
+                    flagsSetUp(0,j);
+                }else System.out.println("if statements not working");
             }
         }
         circles.clear();
