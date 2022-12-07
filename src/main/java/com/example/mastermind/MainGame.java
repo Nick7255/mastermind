@@ -60,17 +60,17 @@ public class MainGame {
         }
     }
 
+
     public void colorPicker(MouseEvent event) {
         get_circle = event.getSource();
         circle = (Circle) event.getSource();
-        if (circle.equals(get_circle) && circles.size() < 4) {
+        if (circles.size() < 4) {
             circle.setFill(color);
             circle.setDisable(true);
             circles.add((Color) circle.getFill());
         }
         if (circles.size() == 4) {
             System.out.println("4 circles complete");
-            System.out.println(circles);
         }
         Label scoreText = new Label();
         Label roundText = new Label();
@@ -93,9 +93,7 @@ public class MainGame {
         ArrayList<Paint> colorsarray = new ArrayList<Paint>();
         ArrayList list = getRandomNonRepeatingIntegers(4, 0, 7);
         for (Rectangle rectangle : Arrays.asList(white, blue, black, yellow, green, orange, purple, red)) {
-            System.out.println(rectangle.getFill());
             colorsarray.add(rectangle.getFill());
-            System.out.println(colorsarray);
         }
         int y = 0;
         Paint current = null;
@@ -104,12 +102,12 @@ public class MainGame {
         flags= new Circle[][]{
                 {flag1,flag2,flag3,flag4},
                 {flag5,flag6,flag7,flag8},
-                {flag9,flag10, flag11,flag12},
+                {flag9,flag10,flag11,flag12},
                 {flag13,flag14,flag15,flag16},
                 {flag17,flag18,flag19,flag20},
                 {flag21,flag22,flag23,flag24},
                 {flag25,flag26,flag27,flag28},
-                {flag29,flag30, flag31,flag32},
+                {flag29,flag30,flag31,flag32},
                 {flag33,flag34,flag35,flag36},
                 {flag37,flag38,flag39,flag40}};
 
@@ -128,7 +126,6 @@ public class MainGame {
 
 
     public int round= 0;
-    public int id=0;
 
     private void flagsSetUp(int colorExist,int idx){
         if (colorExist == 0){
@@ -139,12 +136,23 @@ public class MainGame {
        }
     }
 
+
+    //ta flags doulevoun pleon alla o paixtis prepei na vazei xrwma stous kuklous anagkastika me thn seira alliws sto array mpainoun mperdemena
+    //px an kserw oti to kitrino einai deutero kai valw prwta auto kai meta allaksw xrwma ston prwto kyklo tote sto array tha mpei
+    //oti o prwtos kyklos einai kitrinos anti na mpei oti prwta einai o mple kai meta o kitrinos
+
     public void Submit (ActionEvent event) {
+        System.out.println(hiddenCircles+"    "+circles);
+        int idx = 0;
         for (int i=0; i<circles.size(); i++){
-            for (int j=0; j<hiddenCircles.size(); j++){
-                if (circles.get(i)==hiddenCircles.get(j) && i==j){
-                    flagsSetUp(1,j);
-                } else if (circles.get(i)==hiddenCircles.get(j)) flagsSetUp(0, j);
+            for (int j=0; j<hiddenCircles.size(); j++) {
+                if (circles.get(i) == hiddenCircles.get(j) && i == j) {
+                    flagsSetUp(1, idx);
+                    idx = idx + 1;
+                } else if (circles.get(i) == hiddenCircles.get(j)){
+                    flagsSetUp(0, idx);
+                    idx = idx + 1;
+                } else System.out.println("nothing");
             }
         }
         circles.clear();
