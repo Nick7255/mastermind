@@ -72,9 +72,7 @@ public class MainGame {
         if (circles.size() == 4) {
             System.out.println("4 circles complete");
         }
-        Label scoreText = new Label();
-        Label roundText = new Label();
-        int sum = 0, count = 0;
+
 
     }
     public static ArrayList getRandomNonRepeatingIntegers(int size, int min, int max) {
@@ -126,6 +124,11 @@ public class MainGame {
 
 
     public int round= 0;
+    @FXML
+    Label scoreText = new Label();
+    @FXML
+    Label roundText = new Label();
+    int sum = 0;
 
     private void flagsSetUp(int colorExist,int idx){
         if (colorExist == 0){
@@ -154,8 +157,39 @@ public class MainGame {
                     idx = idx + 1;
                 } else System.out.println("nothing");
             }
+
         }
         circles.clear();
         round += 1;
+        String roundStr= Integer.toString(round);
+        roundText.setText(roundStr);
     }
+
+    String scoreStr = Integer.toString(sum);
+    public void score(int round){
+        if (round == 1){
+            sum=100;
+        } else if (round == 2){
+            sum=90;
+        } else if (round == 3) {
+            sum=80;
+        }else if (round == 4) {
+            sum=70;
+        }else if (round == 5) {
+            sum=60;
+        }else if (round == 6) {
+            sum=50;
+        }else if (round == 7) {
+            sum=40;
+        }else if (round == 8) {
+            sum=30;
+        }else if (round == 9) {
+            sum=20;
+        }else if (round == 10) {
+            sum=10;
+        }else sum= -30;
+        scoreText.setText(scoreStr);
+    }
+
+
 }
