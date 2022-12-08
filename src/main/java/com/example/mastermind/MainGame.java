@@ -204,5 +204,10 @@ public class MainGame {
         scoreText.setText(scoreStr);
     }
 
+    public String setScoreText(String scoreStr){
+        String score = scoreStr;
+        return score;
+    }
+
 
 }

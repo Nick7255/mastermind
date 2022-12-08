@@ -1,25 +1,30 @@
 package com.example.mastermind;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 
 import java.io.IOException;
 
-public class WinnerScene {
+public class WinnerScene extends MainGame {
     private Object root;
     private Stage stage;
     private Scene scene;
-    @FXML
-    private Button Startgame;
 
 
+    public Label scoreText = new Label();
+    String score;
+
+    @Override
+    public String setScoreText(String scoreStr) {
+        scoreText.setText(setScoreText(scoreStr));
+        return scoreStr;
+    }
 
     public void ThrowWinner(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("WinnerScene.fxml"));
