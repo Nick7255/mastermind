@@ -172,8 +172,8 @@ public class MainGame {
         }
         circles.clear();
         round += 1;
-        //String roundStr= Integer.toString(round);
-        //roundText.setText(roundStr);
+        String roundStr= Integer.toString(round);
+        roundText.setText(roundStr);
     }
 
 
