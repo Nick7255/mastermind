@@ -43,6 +43,7 @@ public class MainGame {
 
     public Circle[][] flags;
 
+    public int score;
 
     public void colorGetter(MouseEvent event) {
 
@@ -130,12 +131,15 @@ public class MainGame {
     Label roundText = new Label();
     int sum = 0;
 
-    private void flagsSetUp(int colorExist,int idx){
+    public int win_count=0;
+
+    private void flagsSetUp(int colorExist, int idx){
         if (colorExist == 0){
             flags[round][idx].setFill(Color.WHITE);
         }
        if (colorExist == 1){
            flags[round][idx].setFill(Color.RED);
+           win_count=win_count+1;
        }
     }
 
@@ -147,6 +151,7 @@ public class MainGame {
     public void Submit (ActionEvent event) {
         System.out.println(hiddenCircles+"    "+circles);
         int idx = 0;
+        //int flagcheck = 0;
         for (int i=0; i<circles.size(); i++){
             for (int j=0; j<hiddenCircles.size(); j++) {
                 if (circles.get(i) == hiddenCircles.get(j) && i == j) {
@@ -159,35 +164,43 @@ public class MainGame {
             }
 
         }
+        if (win_count==4){
+            score(round);
+        }
+        else {
+            win_count=0;
+        }
         circles.clear();
         round += 1;
-        String roundStr= Integer.toString(round);
-        roundText.setText(roundStr);
+        //String roundStr= Integer.toString(round);
+        //roundText.setText(roundStr);
     }
 
-    String scoreStr = Integer.toString(sum);
+
     public void score(int round){
-        if (round == 1){
+        int sum = 0;
+        if (round == 0){
             sum=100;
-        } else if (round == 2){
+        } else if (round == 1){
             sum=90;
-        } else if (round == 3) {
+        } else if (round == 2) {
             sum=80;
-        }else if (round == 4) {
+        }else if (round == 3) {
             sum=70;
-        }else if (round == 5) {
+        }else if (round == 4) {
             sum=60;
-        }else if (round == 6) {
+        }else if (round == 5) {
             sum=50;
-        }else if (round == 7) {
+        }else if (round == 6) {
             sum=40;
-        }else if (round == 8) {
+        }else if (round == 7) {
             sum=30;
-        }else if (round == 9) {
+        }else if (round == 8) {
             sum=20;
-        }else if (round == 10) {
+        }else if (round == 9) {
             sum=10;
         }else sum= -30;
+        String scoreStr = Integer.toString(sum);
         scoreText.setText(scoreStr);
     }
 
