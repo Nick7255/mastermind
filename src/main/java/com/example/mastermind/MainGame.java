@@ -2,6 +2,10 @@ package com.example.mastermind;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -10,7 +14,9 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.*;
 import java.util.*;
 
 
@@ -87,8 +93,11 @@ public class MainGame {
         }
         return numbers;
     }
-    public void setGame(ActionEvent event) {
 
+    public int round = 1;
+
+    public void setGame(ActionEvent event) throws FileNotFoundException {
+        roundText.setText(String.valueOf(round));
         ArrayList<Paint> colorsarray = new ArrayList<Paint>();
         ArrayList list = getRandomNonRepeatingIntegers(4, 0, 7);
         for (Rectangle rectangle : Arrays.asList(white, blue, black, yellow, green, orange, purple, red)) {
@@ -117,41 +126,37 @@ public class MainGame {
             hiddenCircles.add((Color) circleHidden.getFill());
             y = y+1;
             num = 0;
-            screen.setOpacity(1);
-            secretcodetext.setOpacity(1);
+            screen.setOpacity(0);
+            secretcodetext.setOpacity(0);
         }
         setGameButton.setOpacity(0);
     }
 
 
-    public int round= 0;
+
     @FXML
-    Label scoreText = new Label();
+    private Label scoreText;
     @FXML
-    Label roundText = new Label();
+    private Label roundText;
     int sum = 0;
 
     public int win_count=0;
 
     private void flagsSetUp(int colorExist, int idx){
         if (colorExist == 0){
-            flags[round][idx].setFill(Color.WHITE);
+            flags[round-1][idx].setFill(Color.WHITE);
         }
        if (colorExist == 1){
-           flags[round][idx].setFill(Color.RED);
+           flags[round-1][idx].setFill(Color.RED);
            win_count=win_count+1;
        }
     }
 
-
-    //ta flags doulevoun pleon alla o paixtis prepei na vazei xrwma stous kuklous anagkastika me thn seira alliws sto array mpainoun mperdemena
-    //px an kserw oti to kitrino einai deutero kai valw prwta auto kai meta allaksw xrwma ston prwto kyklo tote sto array tha mpei
-    //oti o prwtos kyklos einai kitrinos anti na mpei oti prwta einai o mple kai meta o kitrinos
-
-    public void Submit (ActionEvent event) {
-        System.out.println(hiddenCircles+"    "+circles);
+    public void Submit (ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("WinnerScene.fxml"));
+        root = loader.load();
+        WinnerScene controllerForWinner = loader.getController();
         int idx = 0;
-        //int flagcheck = 0;
         for (int i=0; i<circles.size(); i++){
             for (int j=0; j<hiddenCircles.size(); j++) {
                 if (circles.get(i) == hiddenCircles.get(j) && i == j) {
@@ -160,54 +165,57 @@ public class MainGame {
                 } else if (circles.get(i) == hiddenCircles.get(j)){
                     flagsSetUp(0, idx);
                     idx = idx + 1;
-                } else System.out.println("nothing");
+                } else System.out.println(" ");
             }
 
         }
         if (win_count==4){
-            score(round);
+            String final_score = score(round);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setHeight(400);
+            stage.setWidth(680);
+            stage.show();
+
+            controllerForWinner.setScore(final_score, round);
         }
         else {
             win_count=0;
         }
         circles.clear();
-        round += 1;
-        String roundStr= Integer.toString(round);
-        roundText.setText(roundStr);
-    }
+        round =round + 1;
+        roundText.setText(String.valueOf(round));
+        }
 
+    private Parent root;
+    private Stage stage;
+    private Scene scene;
 
-    public void score(int round){
+    public String score(int round) throws IOException {
         int sum = 0;
-        if (round == 0){
+        if (round == 1){
             sum=100;
-        } else if (round == 1){
+        } else if (round == 2){
             sum=90;
-        } else if (round == 2) {
+        } else if (round == 3) {
             sum=80;
-        }else if (round == 3) {
-            sum=70;
         }else if (round == 4) {
-            sum=60;
+            sum=70;
         }else if (round == 5) {
-            sum=50;
+            sum=60;
         }else if (round == 6) {
-            sum=40;
+            sum=50;
         }else if (round == 7) {
-            sum=30;
+            sum=40;
         }else if (round == 8) {
-            sum=20;
+            sum=30;
         }else if (round == 9) {
+            sum=20;
+        }else if (round == 10) {
             sum=10;
         }else sum= -30;
-        String scoreStr = Integer.toString(sum);
-        scoreText.setText(scoreStr);
+        scoreText.setText(String.valueOf(sum));
+        return Integer.toString(sum);
     }
-
-    public String setScoreText(String scoreStr){
-        String score = scoreStr;
-        return score;
-    }
-
-
 }
