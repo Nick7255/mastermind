@@ -126,8 +126,8 @@ public class MainGame {
             hiddenCircles.add((Color) circleHidden.getFill());
             y = y+1;
             num = 0;
-            screen.setOpacity(0);
-            secretcodetext.setOpacity(0);
+            screen.setOpacity(1);
+            secretcodetext.setOpacity(1);
         }
         setGameButton.setOpacity(0);
     }
