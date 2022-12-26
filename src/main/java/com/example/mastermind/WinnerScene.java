@@ -33,7 +33,8 @@ public class WinnerScene {
 
         stage.setWidth(600);
         stage.setHeight(400);
-
+        String css = getClass().getResource("stylesheet.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
 

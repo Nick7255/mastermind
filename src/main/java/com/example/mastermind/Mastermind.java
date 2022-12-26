@@ -1,12 +1,14 @@
 package com.example.mastermind;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
+
 
 public class Mastermind extends Application {
     @Override
@@ -17,6 +19,9 @@ public class Mastermind extends Application {
 
         stage.setWidth(700);
         stage.setHeight(400);
+
+        String css = this.getClass().getResource("stylesheet.css").toExternalForm();
+        scene.getStylesheets().add(css);
 
         stage.setScene(scene);
         stage.show();

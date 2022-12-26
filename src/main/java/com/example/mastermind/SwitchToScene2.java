@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,6 +21,8 @@ public class SwitchToScene2 {
     private Scene scene;
     @FXML
     private Button Startgame;
+    @FXML
+    private AnchorPane anchor;
 
     public void BeginGame(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main game.fxml"));
@@ -31,6 +34,8 @@ public class SwitchToScene2 {
         stage.setHeight(700);
 
         stage.setScene(scene);
+        String css = getClass().getResource("stylesheet.css").toExternalForm();
+        scene.getStylesheets().add(css);
         stage.show();
 
     }

@@ -176,6 +176,8 @@ public class MainGame {
             stage.setScene(scene);
             stage.setHeight(400);
             stage.setWidth(680);
+            String css = this.getClass().getResource("stylesheet.css").toExternalForm();
+            scene.getStylesheets().add(css);
             stage.show();
 
             controllerForWinner.setScore(final_score, round);
