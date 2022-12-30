@@ -188,6 +188,7 @@ public class MainGame {
         circles.clear();
         round =round + 1;
         roundText.setText(String.valueOf(round));
+        winningStatus();
         }
 
     private Parent root;
@@ -219,5 +220,18 @@ public class MainGame {
         }else sum= -30;
         scoreText.setText(String.valueOf(sum));
         return Integer.toString(sum);
+    }
+
+    @FXML
+    private Label winText = new Label();
+
+    @FXML
+    public void winningStatus(){
+        if (round <= 11 && score != 0){
+            winText.setText("YOU WIN!!!");
+        }
+        else if (round == 11 && score ==0){
+            winText.setText("YOU LOST!");
+        }
     }
 }
